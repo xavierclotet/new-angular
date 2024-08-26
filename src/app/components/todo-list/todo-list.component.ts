@@ -28,7 +28,9 @@ interface Todo {
             } @else {
               <input [(ngModel)]="todo.text" (blur)="finishEditing(todo)" (keyup.enter)="finishEditing(todo)">
             }
+            @if (!todo.completed) {
             <button (click)="startEditing(todo)">Edit</button>
+            }
             <button (click)="deleteTodo(todo)">Delete</button>
           </li>
         } @empty {
